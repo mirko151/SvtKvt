@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cf4ff65d-d786-42f3-ac85-af823ab2ea70" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/controller/ExerciseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/controller/Review.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/controller/ReviewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/service/Exercise.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/service/FacilityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/service/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/controller/FacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/controller/FacilityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/model/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/model/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/model/Facility.java" beforeDir="false" afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/model/Facility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/model/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/repository/ExerciseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/repository/ExerciseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/repository/FacilityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/repository/FacilityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sitpass-backend/src/main/java/com/sitpass/repository/ReviewRepository.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="300" />
+    </hideBySeverity>
+    <option name="selectedTabId" value="CurrentFile" />
+    <option name="showPreview" value="true" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2lUprGh7lwytLpParojc6LPA7LH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Karma.login.component.spec.ts.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/mirkopopovic/IdeaProjects/Sitpass/src/main/java/com/sitpass/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "ts.external.directory.path": "/Users/mirkopopovic/IdeaProjects/Sitpass/sitpass-frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JAVA"
+    ]
+  }
+}]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/private/var/folders/z0/6m_22fd173l8vrrlf2yr9qth0000gn/T/qodana_output/qodana.sarif.json" />
+        <option name="reportGuid" value="9074cf78-25c1-412c-8139-27ea475e851e" />
+        <option name="reportName" value="Sitpass/qodana/2024-09-02" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="/private/var/folders/z0/6m_22fd173l8vrrlf2yr9qth0000gn/T/qodana_output/qodana.sarif.json" reportGuid="9074cf78-25c1-412c-8139-27ea475e851e" reportId="Sitpass/qodana/2024-09-02" />
+    </option>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf4ff65d-d786-42f3-ac85-af823ab2ea70" name="Changes" comment="" />
+      <created>1725244705859</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725244705859</updated>
+      <workItem from="1725244706881" duration="13062000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sitpass/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

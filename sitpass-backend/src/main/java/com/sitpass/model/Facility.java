@@ -10,22 +10,34 @@ public class Facility {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
     private String city;
     private String address;
     private String description;
+    private String workingHours;
 
     @ElementCollection
     private Set<String> disciplines;
 
-    private String workingHours;
+    @OneToMany(mappedBy = "facility", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Review> reviews;
 
-    // Getteri i setteri
+    // Getters and Setters
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCity() {
@@ -52,6 +64,14 @@ public class Facility {
         this.description = description;
     }
 
+    public String getWorkingHours() {
+        return workingHours;
+    }
+
+    public void setWorkingHours(String workingHours) {
+        this.workingHours = workingHours;
+    }
+
     public Set<String> getDisciplines() {
         return disciplines;
     }
@@ -60,11 +80,11 @@ public class Facility {
         this.disciplines = disciplines;
     }
 
-    public String getWorkingHours() {
-        return workingHours;
+    public Set<Review> getReviews() {
+        return reviews;
     }
 
-    public void setWorkingHours(String workingHours) {
-        this.workingHours = workingHours;
+    public void setReviews(Set<Review> reviews) {
+        this.reviews = reviews;
     }
 }

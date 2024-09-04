@@ -1,4 +1,4 @@
-package com.sitpass.model;
+package com.sitpass.controller;
 
 import javax.persistence.*;
 
