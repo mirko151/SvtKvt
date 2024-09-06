@@ -1,7 +1,8 @@
+// FacilityService.java
 package com.sitpass.service;
 
-import com.example.sitpass.model.Facility;
-import com.example.sitpass.repository.FacilityRepository;
+import com.sitpass.model.Facility;
+import com.sitpass.repository.FacilityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,18 +18,13 @@ public class FacilityService {
         return facilityRepository.save(facility);
     }
 
-    public Facility getFacilityById(Long id) {
-        return facilityRepository.findById(id).orElseThrow(() -> new RuntimeException("Facility not found"));
-    }
-
-    public Facility updateFacility(Long id, Facility facilityDetails) {
+    public Facility updateFacility(Long id, Facility updatedFacility) {
         Facility facility = facilityRepository.findById(id).orElseThrow(() -> new RuntimeException("Facility not found"));
-        facility.setName(facilityDetails.getName());
-        facility.setCity(facilityDetails.getCity());
-        facility.setAddress(facilityDetails.getAddress());
-        facility.setDescription(facilityDetails.getDescription());
-        facility.setWorkingHours(facilityDetails.getWorkingHours());
-        facility.setDisciplines(facilityDetails.getDisciplines());
+        facility.setName(updatedFacility.getName());
+        facility.setCity(updatedFacility.getCity());
+        facility.setAddress(updatedFacility.getAddress());
+        facility.setDisciplines(updatedFacility.getDisciplines());
+        facility.setWorkingHours(updatedFacility.getWorkingHours());
         return facilityRepository.save(facility);
     }
 
@@ -36,8 +32,7 @@ public class FacilityService {
         facilityRepository.deleteById(id);
     }
 
-    public List<Facility> searchFacilities(String city, String discipline, int minRating) {
-        // Logika za pretragu objekata
-        return facilityRepository.findByCityAndDisciplinesAndRating(city, discipline, minRating);
+    public List<Facility> getAllFacilities() {
+        return facilityRepository.findAll();
     }
 }

@@ -1,3 +1,4 @@
+// ExerciseService.java
 package com.sitpass.service;
 
 import com.sitpass.model.Exercise;
@@ -18,17 +19,20 @@ public class ExerciseService {
         return exerciseRepository.save(exercise);
     }
 
+    public boolean isTimeSlotAvailable(Long facilityId, LocalDateTime startTime, LocalDateTime endTime) {
+        List<Exercise> exercises = exerciseRepository.findByFacilityIdAndTimeRange(facilityId, startTime, endTime);
+        return exercises.isEmpty();
+    }
+
     public List<Exercise> findExercisesByFacility(Long facilityId) {
         return exerciseRepository.findByFacilityId(facilityId);
     }
 
-    public boolean isTimeSlotAvailable(Long facilityId, LocalDateTime startTime, LocalDateTime endTime) {
-        // Logika za proveru dostupnosti termina
-        List<Exercise> existingReservations = exerciseRepository.findByFacilityIdAndTimeRange(facilityId, startTime, endTime);
-        return existingReservations.isEmpty();
-    }
-
     public void deleteExercise(Long id) {
         exerciseRepository.deleteById(id);
+    }
+
+    public boolean userHasVisitedFacility(Long userId, Long facilityId) {
+        return exerciseRepository.existsByUserIdAndFacilityId(userId, facilityId);
     }
 }

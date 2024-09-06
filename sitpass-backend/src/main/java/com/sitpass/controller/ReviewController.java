@@ -1,7 +1,10 @@
+// ReviewController.java
 package com.sitpass.controller;
 
 import com.sitpass.model.Review;
+import com.sitpass.model.User;
 import com.sitpass.service.ReviewService;
+import com.sitpass.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,22 +20,23 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
+    @Autowired
+    private ExerciseService exerciseService;
+
+    // Kreiranje recenzije
     @PostMapping
-    public ResponseEntity<Review> leaveReview(@RequestBody Review review) {
-        Review savedReview = reviewService.leaveReview(review);
-        return new ResponseEntity<>(savedReview, HttpStatus.CREATED);
+    public ResponseEntity<Review> createReview(@RequestBody Review review, @RequestParam Long userId, @RequestParam Long facilityId) {
+        if (exerciseService.userHasVisitedFacility(userId, facilityId)) {
+            Review newReview = reviewService.createReview(review);
+            return new ResponseEntity<>(newReview, HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN); // Korisnik nije posetio objekat
+        }
     }
 
+    // Dobijanje svih recenzija za određeni objekat
     @GetMapping("/facility/{facilityId}")
     public ResponseEntity<List<Review>> getReviewsByFacility(@PathVariable Long facilityId) {
-        List<Review> reviews = reviewService.getReviewsByFacility(facilityId);
-        return new ResponseEntity<>(reviews, HttpStatus.OK);
-    }
-
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteReview(@PathVariable Long id) {
-        reviewService.deleteReview(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(reviewService.getReviewsByFacility(facilityId), HttpStatus.OK);
     }
 }

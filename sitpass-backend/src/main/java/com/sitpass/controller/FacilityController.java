@@ -1,3 +1,4 @@
+// FacilityController.java
 package com.sitpass.controller;
 
 import com.sitpass.model.Facility;
@@ -17,26 +18,21 @@ public class FacilityController {
     @Autowired
     private FacilityService facilityService;
 
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    // Dodavanje novog objekta (samo admin)
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<Facility> createFacility(@RequestBody Facility facility) {
-        Facility newFacility = facilityService.createFacility(facility);
-        return new ResponseEntity<>(newFacility, HttpStatus.CREATED);
+        return new ResponseEntity<>(facilityService.createFacility(facility), HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Facility> getFacilityById(@PathVariable Long id) {
-        Facility facility = facilityService.getFacilityById(id);
-        return new ResponseEntity<>(facility, HttpStatus.OK);
-    }
-
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    // Ažuriranje objekta (samo menadžer ili admin)
+    @PreAuthorize("hasAnyRole('MANAGER', 'ADMIN')")
     @PutMapping("/{id}")
-    public ResponseEntity<Facility> updateFacility(@PathVariable Long id, @RequestBody Facility facilityDetails) {
-        Facility updatedFacility = facilityService.updateFacility(id, facilityDetails);
-        return new ResponseEntity<>(updatedFacility, HttpStatus.OK);
+    public ResponseEntity<Facility> updateFacility(@PathVariable Long id, @RequestBody Facility facility) {
+        return new ResponseEntity<>(facilityService.updateFacility(id, facility), HttpStatus.OK);
     }
 
+    // Brisanje objekta (samo admin)
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFacility(@PathVariable Long id) {
@@ -44,12 +40,9 @@ public class FacilityController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/search")
-    public ResponseEntity<List<Facility>> searchFacilities(
-            @RequestParam String city,
-            @RequestParam String discipline,
-            @RequestParam int minRating) {
-        List<Facility> facilities = facilityService.searchFacilities(city, discipline, minRating);
-        return new ResponseEntity<>(facilities, HttpStatus.OK);
+    // Dobijanje svih objekata
+    @GetMapping
+    public ResponseEntity<List<Facility>> getAllFacilities() {
+        return new ResponseEntity<>(facilityService.getAllFacilities(), HttpStatus.OK);
     }
 }
